@@ -19,7 +19,7 @@ import {
 
 import { ethers } from "ethers";
 import { ZerkContract } from "../../requireEnviromentVariables";
-const contractABIZerk = require("../../utils/contractABIZerk.json");
+const contractABIZerk = require("../../utils/contractABIzerk.json");
 
 export default function CreateScientist() {
   const { isOpen, onOpen, onClose } = useDisclosure();
