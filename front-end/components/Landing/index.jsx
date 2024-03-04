@@ -14,9 +14,9 @@ export default function Landing() {
         <title>Zerk</title>
         <meta
           name="description"
-          content="Zerk Network is a crowfunding descentralized platform, that allows community to come toguether and clean the water"
+          content="Zerk Network is a crowdfunding decentralized platform, that allows community to come together and clean the water"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="..../public/favicon.svg" />
       </Head>
       <header>
