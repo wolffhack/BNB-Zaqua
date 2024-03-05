@@ -114,9 +114,9 @@ export default function ValidateJuster() {
        color="#fff"
        onClick={onOpen}
        _hover={{
-         bg: "transparent",
-         color: "#151515",
-         border: "2px solid #0f4ac9",
+        bg: "transparent",
+        color: "#fff",
+        border: "2px solid #fff",
        }}
       >
         Validate Juster

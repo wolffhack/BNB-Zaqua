@@ -15,22 +15,21 @@ const HeadDash = () => {
   return (
     <Flex
       color="#05D5FB"
-      justify="space-between"
+      justify="center"
       align="center"
-      p={4}
-      bgColor="black"
-      mb="5rem"
+      p={3}
+      bgColor="#0f4ac9"
     >
       <Button variant="link" onClick={handleConnection} m="2" ml="1rem">
-        <Flex direction="column" bgColor="black">
+        <Flex direction="column" bgColor="transparent">
           <Image
             alignSelf="center"
             src="favicon.svg"
-            bgColor="black"
-            w="2rem"
-            alt="Zerk Logo"
+            bgColor="transparent"
+            w="1.5rem"
+            alt="Zaqua Logo"
           />
-          <Heading bgColor="black">Zerk</Heading>
+          <Heading bgColor="transparent" color="white" fontSize="1.5rem">ZAQUA</Heading>
         </Flex>
       </Button>
     </Flex>

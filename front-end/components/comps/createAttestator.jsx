@@ -159,8 +159,8 @@ export default function CreateValidator() {
         onClick={onOpen}
         _hover={{
           bg: "transparent",
-          color: "#151515",
-          border: "2px solid #0f4ac9",
+          color: "#fff",
+          border: "2px solid #fff",
         }}
       >
         Create Validator DID

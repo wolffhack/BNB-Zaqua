@@ -122,14 +122,19 @@ export default function Dashboard() {
   };
 
   return (
-    <Box bgImage="section2.svg" bgSize="cover" bgRepeat="no-repeat">
-      <Flex p="1rem" bgColor="white" w="100%" justify="space-between">
+    <Box className="box" bgImage="guy-lake-makes-fire.jpg" bgSize="cover" bgRepeat="no-repeat">
+      <Flex p="1rem" bgColor="transparent" w="100%" justify="space-between">
         ZAQUA
         <Button
           bgColor="transparent"
           border="2px"
-          borderColor="#0f4ac9"
-          color="#0f4ac9"
+          borderColor="#fff"
+          color="#fff"
+          _hover={{
+            bg: "#0f4ac9",
+            color:"#fff",
+            border: "none",            
+          }}
           onClick={handleConnect}
           disabled={walletConnected} // Disable the button if already connected
         >
@@ -140,21 +145,21 @@ export default function Dashboard() {
         <TabList>
           <Flex bgColor="#0f4ac9" direction="column" justify="left">
             <HeadDash sx={styleTabList} />
-            <Tab sx={styleTabList}>
-              <Image mr=".5rem" src="justerGrey.svg" />
+            <Tab sx={styleTabList} gap="1rem">
+              <Image mr="" src="justerGrey.svg" />
               Scientist
             </Tab>
 
-            <Tab sx={styleTabList}>
-              <Image mr=".5rem" src="gravelGrey.svg" />
+            <Tab sx={styleTabList} gap="1rem">
+              <Image mr="" src="gravelGrey.svg" />
               Science Validators
             </Tab>
-            <Tab sx={styleTabList}>
-              <Image mr=".5rem" src="donatorGrey.svg" />
+            <Tab sx={styleTabList} gap="1rem">
+              <Image mr="" src="donatorGrey.svg" />
               Donators
             </Tab>
-            <Tab sx={styleTabList}>
-              <Image mr=".5rem" src="adminGrey.svg" />
+            <Tab sx={styleTabList} gap="1rem">
+              <Image mr="" src="adminGrey.svg" />
               Admin
             </Tab>
           </Flex>
