@@ -17,13 +17,13 @@ export default function DIdentity() {
       borderTop={"1px solid #0f4ac9"}
       bgImage="section3.sv"
     >
-      <Heading m="3rem">Are you a Scientist Attestator?</Heading>
+      <Heading m="2rem">Are you a Scientist Attestator?</Heading>
       <Flex>
         <Image
           src="cleaningWater.jpg"
           // rounded={"0%"}
           w="50%"
-          mb="1.5rem"
+          // mb="1.5rem"
           ml="1.5rem"
           mr="1.5rem"
         />

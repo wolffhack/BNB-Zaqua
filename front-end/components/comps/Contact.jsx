@@ -87,8 +87,8 @@ export default function Contact() {
           justify={{ md: "space-between" }}
           align={{ md: "center" }}
         >
-          <Text color="white">© 2023 Softlaw S.A. de C.V. All rights reserved</Text>
-          <Stack direction={"row"} spacing={6} bg={"white"} borderColor={"white"}>
+          <Text color="white">© 2024 Softlaw S.A. de C.V. All rights reserved</Text>
+          <Stack direction={"row"} spacing={6} color="#fff" bgColor="white" p="3px" borderRadius="5%">
             <FaTwitter />
 
             <FaYoutube />
