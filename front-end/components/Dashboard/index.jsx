@@ -148,7 +148,7 @@ export default function Dashboard() {
           <Flex bgColor="#0f4ac9" direction="column" justify="left">
             <HeadDash sx={styleTabList} />
             <Tab sx={styleTabList} gap="1rem">
-              <Image mr="" borderColor="#fff" src="justerGrey.svg" />
+              <Image mr="" borderColor="#fff" src="science.svg" />
               Scientist
             </Tab>
 
