@@ -152,11 +152,16 @@ export default function CreateValidator() {
   return (
     <>
       <Button
-        bgColor="transparent"
+        bgColor="blue"
         border="1px"
-        borderColor="#ADFF00"
-        color="#808080"
+        borderColor="#0f4ac9"
+        color="#fff"
         onClick={onOpen}
+        _hover={{
+          bg: "transparent",
+          color: "#151515",
+          border: "2px solid #0f4ac9",
+        }}
       >
         Create Validator DID
       </Button>
@@ -167,6 +172,7 @@ export default function CreateValidator() {
             alignItems="center"
             flexDir="column"
             bgColor="black"
+            color="white"
             borderBottomRadius="3rem"
           >
             <Image
@@ -192,38 +198,42 @@ export default function CreateValidator() {
               Wait for the validation of your Identity <br />& Start Earning
               Money
             </Heading>
-            <Text>Need a Proffessional License to be a Validator</Text>
+            <Text color="white" align="center"> You need a Professional License to be a Validator</Text>
 
             <form onSubmit={handlecreateValidator}>
               <Flex align={"center"} justify={"center"} direction={"column"}>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">License Number</FormLabel>
+                  <FormLabel textAlign="center" color="white">License Number</FormLabel>
                   <Input
                     placeholder="License Number"
+                    color="white"
                     value={licenseNumber}
                     onChange={(e) => setLicenseNumber(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Name</FormLabel>
+                  <FormLabel textAlign="center" color="white">Name</FormLabel>
                   <Input
                     placeholder="Name"
+                    color="white"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Location</FormLabel>
+                  <FormLabel textAlign="center" color="white">Location</FormLabel>
                   <Input
                     placeholder="Location"
+                    color="white"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Especiality</FormLabel>
+                  <FormLabel textAlign="center" color="white">Especiality</FormLabel>
                   <Input
                     placeholder="Especiality"
+                    color="white"
                     value={especiality}
                     onChange={(e) => setEspeciality(e.target.value)}
                   />
@@ -260,11 +270,13 @@ export default function CreateValidator() {
                 ) : (
                   <>
                     <Button
-                      bg={"grey"}
+                      bg={"blue"}
                       color={"white"}
                       w="full"
                       _hover={{
-                        bg: "black",
+                        bg: "transparent",
+                        border: "2px solid #fff",
+                        
                       }}
                       onClick={handlecreateValidator}
                     >

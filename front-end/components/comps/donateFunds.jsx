@@ -118,21 +118,27 @@ export default function DonateToCase() {
   return (
     <>
       <Button
-        bgColor="transparent"
-        border="1px"
-        borderColor="#ADFF00"
-        color="#808080"
-        onClick={onOpen}
+         bgColor="blue"
+         border="1px"
+         borderColor="#0f4ac9"
+         color="#fff"
+         onClick={onOpen}
+         _hover={{
+           bg: "transparent",
+           color: "#151515",
+           border: "2px solid #0f4ac9",
+         }}
       >
-        Donate to clean the water around the world
+        Donate to clean water around the world
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalContent bgColor={"#969696"}>
+        <ModalContent bgColor={"#151515"}>
           <Flex
             alignItems="center"
             flexDir="column"
             bgColor="black"
+            color="white"
             borderBottomRadius="3rem"
           >
             <Image
@@ -157,22 +163,24 @@ export default function DonateToCase() {
             <Heading fontSize="1.2rem" textAlign="center" m="4">
               Donate to clean the water <br />& Help Scientists around the world.
             </Heading>
-            <Text>Need bnb tokens to Donate</Text>
+            <Text align="center" color="white">You Need $bnb tokens to Donate</Text>
 
             <form onSubmit={handledonateToCase}>
               <Flex align={"center"} justify={"center"} direction={"column"}>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Case Number</FormLabel>
+                  <FormLabel textAlign="center" color="white">Case Number</FormLabel>
                   <Input
                     placeholder="setCaseNumber Number"
+                    color="white"
                     value={caseNumber}
                     onChange={(e) => setCaseNumber(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Amount to Donate</FormLabel>
+                  <FormLabel textAlign="center" color="white">Amount to Donate</FormLabel>
                   <Input
                     placeholder="donation"
+                    color="white"
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                   />
@@ -185,11 +193,13 @@ export default function DonateToCase() {
 
           <ModalFooter justify={"space-arround"}>
             <Button
-              bg={"grey"}
+              bg={"blue"}
               color={"white"}
               w="full"
               _hover={{
-                bg: "black",
+                bg: "transparent",
+                border: "2px solid #fff",
+                
               }}
               onClick={handledonateToCase}
             >

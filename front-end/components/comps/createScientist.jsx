@@ -109,11 +109,16 @@ export default function CreateScientist() {
   return (
     <>
       <Button
-        bgColor="transparent"
-        border="1px"
-        borderColor="#ADFF00"
-        color="#808080"
-        onClick={onOpen}
+       bgColor="blue"
+       border="1px"
+       borderColor="#0f4ac9"
+       color="#fff"
+       onClick={onOpen}
+       _hover={{
+         bg: "transparent",
+         color: "#151515",
+         border: "2px solid #0f4ac9",
+       }}
       >
         Create My Scientist DID
       </Button>
@@ -148,30 +153,33 @@ export default function CreateScientist() {
             <Heading fontSize="1.2rem" textAlign="center" m="4">
               Wait for the validation of your Identity <br />& Get Funded
             </Heading>
-            <Text>Need an Id to validate</Text>
+            <Text align="center" color="white">You need an Id to validate</Text>
 
             <form onSubmit={handlecreateScientist}>
               <Flex align={"center"} justify={"center"} direction={"column"}>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">License Number</FormLabel>
+                  <FormLabel textAlign="center" color="white">License Number</FormLabel>
                   <Input
                     placeholder="License Number"
+                    color="white"
                     value={licenseNumber}
                     onChange={(e) => setLicenseNumber(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Name</FormLabel>
+                  <FormLabel textAlign="center" color="white">Name</FormLabel>
                   <Input
                     placeholder="Name"
+                    color="white"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Location</FormLabel>
+                  <FormLabel textAlign="center" color="white">Location</FormLabel>
                   <Input
                     placeholder="Location"
+                    color="white"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                   />
@@ -183,12 +191,14 @@ export default function CreateScientist() {
 
           <ModalFooter justify={"space-arround"}>
             <Button
-              bg={"grey"}
-              color={"white"}
-              w="full"
-              _hover={{
-                bg: "black",
-              }}
+               bg={"blue"}
+               color={"white"}
+               w="full"
+               _hover={{
+                 bg: "transparent",
+                 border: "2px solid #fff",
+                 
+               }}
               onClick={handlecreateScientist}
             >
               Create Scientist

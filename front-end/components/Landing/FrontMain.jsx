@@ -15,38 +15,40 @@ export default function Hero() {
   };
   const router = useRouter();
   return (
-    <Container maxW="100vw" bgImage="abstract Grey.svg">
+    <Container maxW="100%" bgImage="abstract Grey.svg">
       <Stack
         as={Box}
         textAlign={"center"}
-        spacing={{ base: 8, md: 14 }}
-        py={{ base: 20, md: 36 }}
+        // float={"left"}
+        spacing={{ base: 8, md: 10 }}
+        py={{ base: 5, md: 10 }}
         bgColor="transparent"
       >
         <Image
           bgColor="transparent"
           alignSelf={"center"}
-          w={"8rem"}
+          w={"50px"}
           src="zerk idea Z.svg"
         ></Image>
         <Heading
           fontWeight={600}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"110%"}
+          lineHeight={"100%"}
         >
-          Zerk
+          ZAQUA
           <br />
-          <Text as={"span"} color={"grey"}>
+          <Text as={"span"} color={"white"}>
             network
           </Text>
         </Heading>
         <Text
-          mt="10"
+          mt="5px"
           fontWeight={600}
           fontSize={{ base: "xl", sm: "2xl", md: "4xl" }}
-          lineHeight={"110%"}
+          lineHeight={"2px"}
+          color={"white"}
         >
-          Descentralized Science
+          Decentralized Science
         </Text>
         <Stack
           direction={"column"}
@@ -58,12 +60,13 @@ export default function Hero() {
           <Button
             onClick={handleLogin}
             textColor={"black"}
-            colorScheme={"green"}
-            bgGradient={"linear(to-r, #FFFF00, #AFFF00)"}
-            rounded={"full"}
+            colorScheme={"blue"}
+            bgGradient={"linear(to-r, #fff, #0f4ac9)"}
+            rounded={"10%"}
             px={6}
             _hover={{
-              bg: "green.500",
+              bg: "blue.100",
+              color: "white",
             }}
           >
             Get Started

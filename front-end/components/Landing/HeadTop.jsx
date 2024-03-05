@@ -13,16 +13,16 @@ const Header = () => {
 
   return (
     <Flex
-      bgColor="Black"
-      color="#05D5FB"
-      justify="space-between"
+      bgColor="#0f4ac9"
+      color="#fff"
+      justify="center"
       align="center"
       h="10vh"
       p={4}
     >
-      <Heading>Zerk</Heading>
-      <Button bgColor="transparent" color="#808080" onClick={handleConnection}>
-        Login
+      <Heading size="">ZAQUA</Heading>
+      <Button bgColor="transparent" color="#fff" onClick={handleConnection}>
+        LOGIN
       </Button>
     </Flex>
   );

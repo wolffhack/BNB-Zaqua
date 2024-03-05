@@ -114,11 +114,16 @@ export default function CreateCase() {
   return (
     <>
       <Button
-        bgColor="transparent"
-        border="1px"
-        borderColor="#ADFF00"
-        color="#808080"
-        onClick={onOpen}
+       bgColor="blue"
+       border="1px"
+       borderColor="#0f4ac9"
+       color="#fff"
+       onClick={onOpen}
+       _hover={{
+         bg: "transparent",
+         color: "#151515",
+         border: "2px solid #0f4ac9",
+       }}
       >
         Create A Case
       </Button>
@@ -153,38 +158,42 @@ export default function CreateCase() {
             <Heading fontSize="1.2rem" textAlign="center" m="4">
               Wait for the validation of your Case <br />& Get Funded
             </Heading>
-            <Text>Whats your Case Data?</Text>
+            <Text align="center" color="white">What is your Case Data?</Text>
 
             <form onSubmit={handlecreateCase}>
               <Flex align={"center"} justify={"center"} direction={"column"}>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Case Number</FormLabel>
+                  <FormLabel textAlign="center" color="white">Case Number</FormLabel>
                   <Input
                     placeholder="Case Number"
+                    color="white"
                     value={caseNumber}
                     onChange={(e) => setCaseNumber(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Jurisdiction</FormLabel>
+                  <FormLabel textAlign="center" color="white">Jurisdiction</FormLabel>
                   <Input
                     placeholder="Jurisdiction"
+                    color="white"
                     value={jurisdiction}
                     onChange={(e) => setJurisdiction(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Price</FormLabel>
+                  <FormLabel textAlign="center" color="white">Price</FormLabel>
                   <Input
                     placeholder="Price"
+                    color="white"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Description</FormLabel>
+                  <FormLabel textAlign="center" color="white">Description</FormLabel>
                   <Input
                     placeholder="Description"
+                    color="white"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                   />
@@ -196,11 +205,13 @@ export default function CreateCase() {
 
           <ModalFooter justify={"space-arround"}>
             <Button
-              bg={"grey"}
+              bg={"blue"}
               color={"white"}
               w="full"
               _hover={{
-                bg: "black",
+                bg: "transparent",
+                border: "2px solid #fff",
+                
               }}
               onClick={handlecreateCase}
             >

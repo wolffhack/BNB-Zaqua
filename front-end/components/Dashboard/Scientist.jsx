@@ -11,7 +11,7 @@ export default function Scientist() {
         <Flex
           p="1rem"
           borderRadius="1rem"
-          bgGradient="linear(to-l, #ADFF00, #F1FF00)"
+          bgGradient="linear(to-l, #0f4ac9, #fff)"
         >
           <Heading color="#151515">
             Get Funded! <br /> & Clean the water

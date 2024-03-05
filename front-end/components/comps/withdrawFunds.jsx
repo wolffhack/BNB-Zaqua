@@ -106,17 +106,22 @@ export default function WithdrawFunds() {
   return (
     <>
       <Button
-        bgColor="transparent"
+        bgColor="blue"
         border="1px"
-        borderColor="#ADFF00"
-        color="#808080"
+        borderColor="#0f4ac9"
+        color="#fff"
         onClick={onOpen}
+        _hover={{
+          bg: "transparent",
+          color: "#151515",
+          border: "2px solid #0f4ac9",
+        }}
       >
         Withdraw Funds
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalContent bgColor={"#969696"}>
+        <ModalContent bgColor={"#151515"}>
           <Flex
             alignItems="center"
             flexDir="column"
@@ -145,14 +150,15 @@ export default function WithdrawFunds() {
             <Heading fontSize="1.2rem" textAlign="center" m="4">
               Wait for the validation of your Identity <br />& Get Funded
             </Heading>
-            <Text>Need an Id to validate</Text>
+            <Text align="center" color="white">Need an Id to validate</Text>
 
             <form onSubmit={handlewithdrawFunds}>
               <Flex align={"center"} justify={"center"} direction={"column"}>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center"> Case Number</FormLabel>
+                  <FormLabel textAlign="center" color="white"> Case Number</FormLabel>
                   <Input
                     placeholder="Withdraw funds"
+                    color="white"
                     value={caseNumber}
                     onChange={(e) => setCaseNumber(e.target.value)}
                   />
@@ -165,12 +171,14 @@ export default function WithdrawFunds() {
 
           <ModalFooter justify={"space-arround"}>
             <Button
-              bg={"grey"}
-              color={"white"}
-              w="full"
-              _hover={{
-                bg: "black",
-              }}
+             bg={"blue"}
+             color={"white"}
+             w="full"
+             _hover={{
+               bg: "transparent",
+               border: "2px solid #fff",
+               
+             }}
               onClick={handlewithdrawFunds}
             >
               Withdraw funds

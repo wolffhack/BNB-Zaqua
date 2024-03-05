@@ -103,11 +103,17 @@ export default function ValidateScientist() {
   return (
     <>
       <Button
-        bgColor="transparent"
+        bgColor="blue"
         border="1px"
-        borderColor="#ADFF00"
-        color="#808080"
+        borderColor="#0f4ac9"
+        color="#fff"
+        width="max-width"
         onClick={onOpen}
+        _hover={{
+          bg: "transparent",
+          color: "#151515",
+          border: "2px solid #0f4ac9",
+        }}
       >
         Validate Scientist
       </Button>
@@ -140,15 +146,16 @@ export default function ValidateScientist() {
 
           <ModalBody>
             <Heading fontSize="1.2rem" textAlign="center" m="4">
-              Need address of the Scientist
+              Input address of Scientist
             </Heading>
 
             <form onSubmit={handlevalidateScientist}>
               <Flex align={"center"} justify={"center"} direction={"column"}>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center"> Scientist Address</FormLabel>
+                  <FormLabel textAlign="center" color="white"> Scientist Address</FormLabel>
                   <Input
                     placeholder="Scientist Address"
+                    color="white"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                   />
@@ -161,11 +168,12 @@ export default function ValidateScientist() {
 
           <ModalFooter justify={"space-arround"}>
             <Button
-              bg={"grey"}
+              bg={"blue"}
               color={"white"}
               w="full"
               _hover={{
-                bg: "black",
+                bg: "transparent",
+                border: "2px solid #fff",
               }}
               onClick={handlevalidateScientist}
             >

@@ -111,11 +111,16 @@ export default function ValidateCase() {
   return (
     <>
       <Button
-        bgColor="transparent"
+        bgColor="blue"
         border="1px"
-        borderColor="#ADFF00"
-        color="#808080"
+        borderColor="#0f4ac9"
+        color="#fff"
         onClick={onOpen}
+        _hover={{
+          bg: "transparent",
+          color: "#151515",
+          border: "2px solid #0f4ac9",
+        }}
       >
         Validate Cases
       </Button>
@@ -148,15 +153,16 @@ export default function ValidateCase() {
 
           <ModalBody>
             <Heading fontSize="1.2rem" textAlign="center" m="4">
-              Validaste Cases and win coins
+              Validate Cases and win coins
             </Heading>
 
             <form onSubmit={handleValidateCase}>
               <Flex align={"center"} justify={"center"} direction={"column"}>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center">Case Number</FormLabel>
+                  <FormLabel textAlign="center" color="white">Case Number</FormLabel>
                   <Input
                     placeholder="case Number"
+                    color="white"
                     value={casseNumber}
                     onChange={(e) => setCasseNumber(e.target.value)}
                   />
@@ -168,12 +174,14 @@ export default function ValidateCase() {
 
           <ModalFooter justify={"space-arround"}>
             <Button
-              bg={"grey"}
-              color={"white"}
-              w="full"
-              _hover={{
-                bg: "black",
-              }}
+                      bg={"blue"}
+                      color={"white"}
+                      w="full"
+                      _hover={{
+                        bg: "transparent",
+                        border: "2px solid #fff",
+                        
+                      }}
               onClick={handleValidateCase}
             >
               Validate Case

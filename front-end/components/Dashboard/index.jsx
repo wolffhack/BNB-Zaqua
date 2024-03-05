@@ -24,8 +24,8 @@ export default function Dashboard() {
     ml: "1rem",
     mr: "1rem",
     fontSize: "md",
-    color: "gray",
-    _hover: { color: "#adff00" },
+    color: "#fff",
+    _hover: { color: "#000" },
   };
 
   const [walletConnected, setWalletConnected] = useState(false);
@@ -123,12 +123,13 @@ export default function Dashboard() {
 
   return (
     <Box bgImage="section2.svg" bgSize="cover" bgRepeat="no-repeat">
-      <Flex p="1rem" bgColor="black" w="100vw" justify="flex-end">
+      <Flex p="1rem" bgColor="white" w="100%" justify="space-between">
+        ZAQUA
         <Button
           bgColor="transparent"
-          border="1px"
-          borderColor="#ADFF00"
-          color="#ADFF00"
+          border="2px"
+          borderColor="#0f4ac9"
+          color="#0f4ac9"
           onClick={handleConnect}
           disabled={walletConnected} // Disable the button if already connected
         >
@@ -137,7 +138,7 @@ export default function Dashboard() {
       </Flex>
       <Tabs mt="2rem" isManual variant="lazy" orientation="vertical" isFitted>
         <TabList>
-          <Flex bgColor="Black" direction="column" justify="left">
+          <Flex bgColor="#0f4ac9" direction="column" justify="left">
             <HeadDash sx={styleTabList} />
             <Tab sx={styleTabList}>
               <Image mr=".5rem" src="justerGrey.svg" />

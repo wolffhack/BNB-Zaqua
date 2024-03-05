@@ -11,10 +11,10 @@ export default function Landing() {
   return (
     <>
       <Head>
-        <title>Zerk</title>
+        <title>Zaqua</title>
         <meta
           name="description"
-          content="Zerk Network is a crowdfunding decentralized platform, that allows community to come together and clean the water"
+          content="Zaqua Network is a crowdfunding decentralized platform, that allows community to come together and clean the water"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="..../public/favicon.svg" />
