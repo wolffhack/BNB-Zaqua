@@ -17,8 +17,8 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { ethers } from "ethers";
-import { ZerkContract } from "../../requireEnviromentVariables";
-const contractABIzerk = require("../../utils/contractABIzerk.json");
+import { ZaquaContract } from "../../requireEnviromentVariables";
+const contractABIZaqua = require("../../utils/contractABIzaqua.json");
 
 export default function DonateToCase() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -32,8 +32,8 @@ export default function DonateToCase() {
       await window.ethereum.request({ method: "eth_requestAccounts" });
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
-        ZerkContract,
-        contractABIzerk,
+        ZaquaContract,
+        contractABIZaqua,
         signer
       );
       const transaction = await contract.donateToCase(caseNumber, {
@@ -59,7 +59,7 @@ export default function DonateToCase() {
         errorMessage = 'Case number does not exist';
       }
       
-       //error handling for zerk app chain Starts
+       //error handling for Zaqua app chain Starts
        else if (typeof error === 'object' && error.data && typeof error.data.message === 'string') {
         
         if (error.data.message.includes('Case number does not exist')) {
@@ -76,7 +76,7 @@ export default function DonateToCase() {
           errorMessage = 'Invalid donation amount';
         }
       }
-      //error handling for zerk app chain Ends
+      //error handling for Zaqua app chain Ends
       else if (error.message && error.message.includes(' Case is not validated')) {
         errorMessage = ' Case is not validated.';
       }else if (error.message && error.message.includes(' insufficient funds')) {

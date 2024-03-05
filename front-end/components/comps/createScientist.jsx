@@ -18,30 +18,32 @@ import {
 } from "@chakra-ui/react";
 
 import { ethers } from "ethers";
-import { ZerkContract } from "../../requireEnviromentVariables";
-const contractABIZerk = require("../../utils/contractABIzerk.json");
+import { ZaquaContract } from "../../requireEnviromentVariables";
+const contractABIZaqua = require("../../utils/contractABIzaqua.json");
 
 export default function CreateScientist() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [licenseNumber, setLicenseNumber] = useState("");
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
+  const [speciality, setSpeciality] = useState("");
   const toast =useToast()
 
-  const createScientist = async (licenseNumber, name, location) => {
+  const createScientist = async (licenseNumber, name, location, speciality) => {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       await window.ethereum.request({ method: "eth_requestAccounts" });
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
-        ZerkContract,
-        contractABIZerk,
+        ZaquaContract,
+        contractABIZaqua,
         signer
       );
       const transaction = await contract.createScientist(
         licenseNumber,
         name,
-        location
+        location,
+        speciality
       );
       console.log("transaction", transaction);
       const receipt = await transaction.wait();
@@ -62,7 +64,7 @@ export default function CreateScientist() {
     errorMessage = 'User denied the transaction.';
   }
   
-  //error handling for zerk app chain starts
+  //error handling for Zaqua app chain starts
   else if (typeof error === 'object' && error.data && typeof error.data.message === 'string') {
         
     if (error.data.message.includes(' revert Scientist already exists')) {
@@ -70,7 +72,7 @@ export default function CreateScientist() {
     }
   
   }
-  //error handling for Zerk app chain ends
+  //error handling for Zaqua app chain ends
   else if (error.message && error.message.includes("Scientist already exists")){
     errorMessage =" Scientist already exists"
   } else {
@@ -92,7 +94,7 @@ export default function CreateScientist() {
 
   const handlecreateScientist = async () => {
     if (licenseNumber && name && location) {
-      createScientist(licenseNumber, name, location);
+      createScientist(licenseNumber, name, location, speciality);
       
     } else {
       toast({
@@ -182,6 +184,15 @@ export default function CreateScientist() {
                     color="white"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
+                  />
+                </FormControl>
+                <FormControl p="1rem" pb="0" isRequired>
+                  <FormLabel textAlign="center" color="white">Speciality</FormLabel>
+                  <Input
+                    placeholder="Speciality"
+                    color="white"
+                    value={speciality}
+                    onChange={(e) => setSpeciality(e.target.value)}
                   />
                 </FormControl>
                 <Stack spacing={6} direction={["column", "row"]}></Stack>

@@ -10,6 +10,58 @@
       {
         "indexed": false,
         "internalType": "address",
+        "name": "attestator",
+        "type": "address"
+      }
+    ],
+    "name": "AttestatorAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "attestator",
+        "type": "address"
+      }
+    ],
+    "name": "AttestatorCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "attestator",
+        "type": "address"
+      }
+    ],
+    "name": "AttestatorRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "attestator",
+        "type": "address"
+      }
+    ],
+    "name": "AttestatorValidated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
         "name": "juster",
         "type": "address"
       },
@@ -67,11 +119,11 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "juster",
+        "name": "scienntist",
         "type": "address"
       }
     ],
-    "name": "JusterAdded",
+    "name": "ScientistAdded",
     "type": "event"
   },
   {
@@ -80,11 +132,11 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "juster",
+        "name": "scientist",
         "type": "address"
       }
     ],
-    "name": "JusterCreated",
+    "name": "ScientistCreated",
     "type": "event"
   },
   {
@@ -93,11 +145,11 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "juster",
+        "name": "scientist",
         "type": "address"
       }
     ],
-    "name": "JusterRemoved",
+    "name": "ScientistRemoved",
     "type": "event"
   },
   {
@@ -106,74 +158,45 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "juster",
+        "name": "scientist",
         "type": "address"
       }
     ],
-    "name": "JusterValidated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "lawyer",
-        "type": "address"
-      }
-    ],
-    "name": "LawyerAdded",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "lawyer",
-        "type": "address"
-      }
-    ],
-    "name": "LawyerCreated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "lawyer",
-        "type": "address"
-      }
-    ],
-    "name": "LawyerRemoved",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "lawyer",
-        "type": "address"
-      }
-    ],
-    "name": "LawyerValidated",
+    "name": "ScientistValidated",
     "type": "event"
   },
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "_lawyerAddress",
+        "name": "_attestatorAddress",
         "type": "address"
       }
     ],
-    "name": "addLawyer",
+    "name": "addAttestator",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_location",
+        "type": "string"
+      }
+    ],
+    "name": "createAttestator",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -187,7 +210,7 @@
       },
       {
         "internalType": "string",
-        "name": "_jurisdiction",
+        "name": "_location",
         "type": "string"
       },
       {
@@ -210,31 +233,8 @@
     "inputs": [
       {
         "internalType": "string",
-        "name": "_passportNumber",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_name",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_jurisdiction",
-        "type": "string"
-      }
-    ],
-    "name": "createJuster",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
         "name": "_licenseNumber",
-        "type": "uint256"
+        "type": "string"
       },
       {
         "internalType": "string",
@@ -243,7 +243,7 @@
       },
       {
         "internalType": "string",
-        "name": "_jurisdiction",
+        "name": "_location",
         "type": "string"
       },
       {
@@ -252,7 +252,7 @@
         "type": "string"
       }
     ],
-    "name": "createLawyer",
+    "name": "createScientist",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -261,11 +261,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_lawyerAddress",
+        "name": "_attestatorAddress",
         "type": "address"
       }
     ],
-    "name": "delLawyer",
+    "name": "delAttestator",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -300,9 +300,43 @@
     "name": "getAccessLevel",
     "outputs": [
       {
-        "internalType": "enum ZerkLawyerJuster.AccessLevel",
+        "internalType": "enum Zaqua.AccessLevel",
         "name": "",
         "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_attestatorAddress",
+        "type": "address"
+      }
+    ],
+    "name": "getAttestator",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "internalType": "bool",
+        "name": "isValidated",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -320,7 +354,7 @@
     "outputs": [
       {
         "internalType": "string",
-        "name": "jurisdiction",
+        "name": "location",
         "type": "string"
       },
       {
@@ -345,7 +379,7 @@
       },
       {
         "internalType": "address",
-        "name": "justerAddress",
+        "name": "scientistAddress",
         "type": "address"
       },
       {
@@ -393,50 +427,16 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_justerAddress",
+        "name": "_scientistAddress",
         "type": "address"
       }
     ],
-    "name": "getJuster",
+    "name": "getScientist",
     "outputs": [
       {
         "internalType": "string",
-        "name": "passportNumber",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "name",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "jurisdiction",
-        "type": "string"
-      },
-      {
-        "internalType": "bool",
-        "name": "isValidated",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_lawyerAddress",
-        "type": "address"
-      }
-    ],
-    "name": "getLawyer",
-    "outputs": [
-      {
-        "internalType": "uint256",
         "name": "licenseNumber",
-        "type": "uint256"
+        "type": "string"
       },
       {
         "internalType": "string",
@@ -445,7 +445,7 @@
       },
       {
         "internalType": "string",
-        "name": "jurisdiction",
+        "name": "location",
         "type": "string"
       },
       {
@@ -505,9 +505,43 @@
     "name": "s_accessLevels",
     "outputs": [
       {
-        "internalType": "enum ZerkLawyerJuster.AccessLevel",
+        "internalType": "enum Zaqua.AccessLevel",
         "name": "",
         "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "s_attestators",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "internalType": "bool",
+        "name": "isValidated",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -530,7 +564,7 @@
       },
       {
         "internalType": "string",
-        "name": "jurisdiction",
+        "name": "location",
         "type": "string"
       },
       {
@@ -555,7 +589,7 @@
       },
       {
         "internalType": "address",
-        "name": "justerAddress",
+        "name": "scientistAddress",
         "type": "address"
       },
       {
@@ -594,46 +628,12 @@
         "type": "address"
       }
     ],
-    "name": "s_justers",
+    "name": "s_scientists",
     "outputs": [
       {
         "internalType": "string",
-        "name": "passportNumber",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "name",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "jurisdiction",
-        "type": "string"
-      },
-      {
-        "internalType": "bool",
-        "name": "isValidated",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "s_lawyers",
-    "outputs": [
-      {
-        "internalType": "uint256",
         "name": "licenseNumber",
-        "type": "uint256"
+        "type": "string"
       },
       {
         "internalType": "string",
@@ -642,7 +642,7 @@
       },
       {
         "internalType": "string",
-        "name": "jurisdiction",
+        "name": "location",
         "type": "string"
       },
       {
@@ -681,6 +681,19 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "_attestatorAddress",
+        "type": "address"
+      }
+    ],
+    "name": "validateAttestator",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "_caseNumber",
         "type": "uint256"
@@ -695,24 +708,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_justerAddress",
+        "name": "_scientistAddress",
         "type": "address"
       }
     ],
-    "name": "validateJuster",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_lawyerAddress",
-        "type": "address"
-      }
-    ],
-    "name": "validateLawyer",
+    "name": "validateScientist",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

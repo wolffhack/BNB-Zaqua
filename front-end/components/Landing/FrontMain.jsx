@@ -39,7 +39,7 @@ export default function Hero() {
           bgColor="transparent"
           alignSelf={"center"}
           w={"20px"}
-          src="zerk idea Z.svg"
+          src="zBlue.png"
         ></Image>
         <Heading
           fontWeight={500}

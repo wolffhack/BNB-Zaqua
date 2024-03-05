@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import { ZerkContract } from "../../requireEnviromentVariables";
-const contractABIzerk = require("../../utils/contractABIzerk.json");
+import { ZaquaContract } from "../../requireEnviromentVariables";
+const contractABIZaqua = require("../../utils/contractABIzaqua.json");
 
 export default function CardCase() {
   const [cases, setCases] = useState([]);
@@ -11,8 +11,8 @@ export default function CardCase() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
-        ZerkContract,
-        contractABIzerk,
+        ZaquaContract,
+        contractABIZaqua,
         signer
       );
 

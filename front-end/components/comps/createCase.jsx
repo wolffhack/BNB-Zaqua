@@ -18,17 +18,17 @@ import {
 } from "@chakra-ui/react";
 import { ethers } from "ethers";
 import { ZerkContract } from "../../requireEnviromentVariables";
-const contractABIzerk = require("../../utils/contractABIzerk.json");
+const contractABIzerk = require("../../utils/contractABIzaqua.json");
 
 export default function CreateCase() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [caseNumber, setCaseNumber] = useState("");
-  const [jurisdiction, setJurisdiction] = useState("");
+  const [location, setlocation] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const toast = useToast();
 
-  const createCase = async (caseNumber, jurisdiction, price, description) => {
+  const createCase = async (caseNumber, location, price, description) => {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -40,7 +40,7 @@ export default function CreateCase() {
       );
       const transaction = await contract.createCase(
         caseNumber,
-        jurisdiction,
+        location,
         price,
         description
       );
@@ -97,8 +97,8 @@ export default function CreateCase() {
   };
 
   const handlecreateCase = async () => {
-    if (caseNumber && jurisdiction && price && description) {
-      createCase(caseNumber, jurisdiction, price, description);
+    if (caseNumber && location && price && description) {
+      createCase(caseNumber, location, price, description);
     } else {
       toast({
         title: 'Create Case',
@@ -172,12 +172,12 @@ export default function CreateCase() {
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center" color="white">Jurisdiction</FormLabel>
+                  <FormLabel textAlign="center" color="white">location</FormLabel>
                   <Input
-                    placeholder="Jurisdiction"
+                    placeholder="location"
                     color="white"
-                    value={jurisdiction}
-                    onChange={(e) => setJurisdiction(e.target.value)}
+                    value={location}
+                    onChange={(e) => setlocation(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>

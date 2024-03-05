@@ -17,8 +17,8 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { ethers } from "ethers";
-import { ZerkContract } from "../../requireEnviromentVariables";
-const contractABIzerk = require("../../utils/contractABIzerk.json");
+import { ZaquaContract } from "../../requireEnviromentVariables";
+const contractABIZaqua = require("../../utils/contractABIzaqua.json");
 
 export default function WithdrawFunds() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -31,8 +31,8 @@ export default function WithdrawFunds() {
       await window.ethereum.request({ method: "eth_requestAccounts" });
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
-        ZerkContract,
-        contractABIzerk,
+        ZaquaContract,
+        contractABIZaqua,
         signer
       );
       const transaction = await contract.withdrawFunds(caseNumber);
@@ -56,7 +56,7 @@ export default function WithdrawFunds() {
         errorMessage = 'Only assigned Juster can withdraw funds';
       }
       
-       //error handling for zerk app chain Starts
+       //error handling for Zaqua app chain Starts
        else if (typeof error === 'object' && error.data && typeof error.data.message === 'string') {
         
         if (error.data.message.includes(' revert Only Juster')) {
@@ -68,7 +68,7 @@ export default function WithdrawFunds() {
         }
          
       }
-      //error handling for zerk app chain Ends
+      //error handling for Zaqua app chain Ends
       else if (error.message && error.message.includes('Case is not fully funded')) {
         errorMessage = 'Case is not fully funded yet.';
       }else if (error.message && error.message.includes('user rejected transaction')) {
