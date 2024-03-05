@@ -6,6 +6,7 @@ import {
   Button,
   Stack,
   Image,
+  Flex,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
@@ -15,41 +16,59 @@ export default function Hero() {
   };
   const router = useRouter();
   return (
-    <Container maxW="100%" bgImage="abstract Grey.svg">
+    <Flex
+      direction={"column"}
+      align={"center"}
+      justify={"center"}
+      borderTop={"1px solid #0f4ac9"}
+      bgImage="guy-lake-makes-fire.jpg"
+      bgSize="cover"
+      bgRepeat="no-repeat" 
+      className="bx"
+    > 
+    <Flex >
+      <Container maxW="100%">
       <Stack
         as={Box}
         textAlign={"center"}
-        // float={"left"}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 5, md: 10 }}
-        bgColor="transparent"
       >
         <Image
           bgColor="transparent"
           alignSelf={"center"}
-          w={"50px"}
+          w={"20px"}
           src="zerk idea Z.svg"
         ></Image>
         <Heading
-          fontWeight={600}
-          fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"100%"}
+          fontWeight={500}
+          // fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+          fontSize={"4rem"}
+          lineHeight={"70%"}
+          color="white"
         >
           ZAQUA
           <br />
-          <Text as={"span"} color={"white"}>
+          <Text as={"span"} color={"#0f4ac9"}>
             network
           </Text>
         </Heading>
         <Text
           mt="5px"
           fontWeight={600}
-          fontSize={{ base: "xl", sm: "2xl", md: "4xl" }}
+          // fontSize={{ base: "xl", sm: "2xl", md: "4xl" }}
+          fontSize="1.5rem"
           lineHeight={"2px"}
           color={"white"}
         >
           Decentralized Science
         </Text>
+        
+      </Stack>
+    </Container>
+    <Flex direction="column" mr="1.5rem">
+        <Text fontSize={"1.5rem"} fontWeight={"500"} color="white"  mb="1rem" mt="5rem">Zaqua Network is a crowdfunding decentralized platform, that allows community to come together and clean the water</Text>
+
         <Stack
           direction={"column"}
           spacing={3}
@@ -59,20 +78,23 @@ export default function Hero() {
         >
           <Button
             onClick={handleLogin}
-            textColor={"black"}
-            colorScheme={"blue"}
-            bgGradient={"linear(to-r, #fff, #0f4ac9)"}
-            rounded={"10%"}
-            px={6}
+            mt="1rem"
+            bgColor="blue"
+            border="1px"
+            borderColor="#0f4ac9"
+            color="white"
             _hover={{
-              bg: "blue.100",
-              color: "white",
+              bg: "transparent",
+              color: "#fff",
+              border: "2px solid #fff",
             }}
           >
             Get Started
           </Button>
         </Stack>
-      </Stack>
-    </Container>
+    </Flex>
+    </Flex>
+    
+    </Flex>
   );
 }

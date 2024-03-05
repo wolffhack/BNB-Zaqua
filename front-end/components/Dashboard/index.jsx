@@ -8,6 +8,7 @@ import {
   Image,
   Button,
   Box,
+  Heading,
 } from "@chakra-ui/react";
 import HeadDash from "../comps/HeadDash";
 import LegalVerificator from "./Attestator";
@@ -23,6 +24,7 @@ export default function Dashboard() {
     mb: "1rem",
     ml: "1rem",
     mr: "1rem",
+    alignItems: "center",
     fontSize: "md",
     color: "#fff",
     _hover: { color: "#000" },
@@ -124,7 +126,7 @@ export default function Dashboard() {
   return (
     <Box className="box" bgImage="guy-lake-makes-fire.jpg" bgSize="cover" bgRepeat="no-repeat">
       <Flex p="1rem" bgColor="transparent" w="100%" justify="space-between">
-        ZAQUA
+      <Heading fontSize="1.4rem" color="white">ZAQUA</Heading>
         <Button
           bgColor="transparent"
           border="2px"
@@ -146,12 +148,12 @@ export default function Dashboard() {
           <Flex bgColor="#0f4ac9" direction="column" justify="left">
             <HeadDash sx={styleTabList} />
             <Tab sx={styleTabList} gap="1rem">
-              <Image mr="" src="justerGrey.svg" />
+              <Image mr="" borderColor="#fff" src="justerGrey.svg" />
               Scientist
             </Tab>
 
-            <Tab sx={styleTabList} gap="1rem">
-              <Image mr="" src="gravelGrey.svg" />
+            <Tab sx={styleTabList} gap="rem">
+              <Image ml="10px" src="gravelGrey.svg" />
               Science Validators
             </Tab>
             <Tab sx={styleTabList} gap="1rem">
@@ -159,7 +161,7 @@ export default function Dashboard() {
               Donators
             </Tab>
             <Tab sx={styleTabList} gap="1rem">
-              <Image mr="" src="adminGrey.svg" />
+              <Image mr="10px" src="adminGrey.svg" />
               Admin
             </Tab>
           </Flex>

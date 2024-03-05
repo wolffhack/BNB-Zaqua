@@ -15,13 +15,22 @@ const Header = () => {
     <Flex
       bgColor="#0f4ac9"
       color="#fff"
-      justify="center"
+      justify="space-between"
       align="center"
       h="10vh"
       p={4}
     >
-      <Heading size="">ZAQUA</Heading>
-      <Button bgColor="transparent" color="#fff" onClick={handleConnection}>
+      <Heading fontSize="1.4rem" color="white">ZAQUA</Heading>
+      <Button 
+      bgColor="transparent" 
+      color="#fff" 
+      border="1px solid #fff"
+      _hover={{
+        bg: "transparent",
+        color: "#fff",
+        border: "2px solid #fff",
+      }}
+      onClick={handleConnection}>
         LOGIN
       </Button>
     </Flex>

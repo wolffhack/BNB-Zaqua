@@ -13,6 +13,7 @@ export default function DIdentity() {
     <Flex
       direction={"column"}
       align={"center"}
+      justify={"space-between"}
       borderTop={"1px solid #0f4ac9"}
       bgImage="section3.sv"
     >

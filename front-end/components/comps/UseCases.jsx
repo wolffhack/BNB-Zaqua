@@ -9,8 +9,8 @@ export default function UseCases() {
   };
 
   return (
-    <Box p="2rem" textAlign="center" bgImage="section2.sv">
-      <Heading>Get Funded</Heading>
+    <Box p="2rem" textAlign="center" bgImage="">
+      <Heading>Get Funded!</Heading>
       <Heading>Take Water Action</Heading>
       <Flex w="100%" align="center" justify="center">
         <Box alignSelf="center" justify="center" sx={styleContratos}>
