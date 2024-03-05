@@ -11,9 +11,8 @@ module.exports = {
       chainId: 1337,
       gas: "auto", 
     },
-    bnbBacon: {
-      url: process.env.MOONBASE_URL || 'https://rpc.testnet.moonbeam.network',
-      chainId: 1287,
+    bnbsc: {
+      url: "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       gasPrice: 1100000000,
     },
