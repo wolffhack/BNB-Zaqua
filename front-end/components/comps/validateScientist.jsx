@@ -19,14 +19,14 @@ import {
 
 import { ethers } from "ethers";
 import { ZerkContract } from "../../requireEnviromentVariables";
-const contractABIzerk = require("../../utils/contractABIzerk.json");
+const contractABIzerk = require("../../utils/contractABIzaqua.json");
 
-export default function ValidateJuster() {
+export default function ValidateScientist() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [address, setAddress] = useState("");
   const toast = useToast();
 
-  const validateJuster = async (address) => {
+  const validateScientist = async (address) => {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -36,14 +36,14 @@ export default function ValidateJuster() {
         contractABIzerk,
         signer
       );
-      const transaction = await contract.validateJuster(address);
+      const transaction = await contract.validateScientist(address);
       console.log("transaction", transaction);
       const receipt = await transaction.wait();
       const transactionHash = receipt.transactionHash;
       console.log(transactionHash);
       toast({
-        title: 'Validate Juster',
-        description: 'Juster is validated & can create case now',
+        title: 'Validate Scientist',
+        description: 'Scientist is validated & can create case now',
         status: 'success',
         duration: 2000,
         isClosable: true,
@@ -54,32 +54,32 @@ export default function ValidateJuster() {
       console.log(`Error: ${error}`);
       let errorMessage;
       if (error.message && error.message.includes('Only lawyer')) {
-        errorMessage = 'Only validated lawyer can validate Justers';
+        errorMessage = 'Only validated lawyer can validate Scientists';
       }
       
       //error handling for zerk app chain Starts
       else if (typeof error === 'object' && error.data && typeof error.data.message === 'string') {
         
         if (error.data.message.includes(' revert Only lawyer')) {
-          errorMessage = 'Only validated lawyer can validate Justers';
+          errorMessage = 'Only validated lawyer can validate Scientists';
         }
         
-         if (error.data.message.includes('Juster is already validated')) {
-          errorMessage = 'Juster is already validated';
+         if (error.data.message.includes('Scientist is already validated')) {
+          errorMessage = 'Scientist is already validated';
         }
          
       }
       //error handling for zerk app chain Ends
       else if (error.message && error.message.includes('user rejected transaction')) {
         errorMessage = 'User denied the transaction.';
-      }else if(error.message && error.message.includes('Juster is already validated')){
-        errorMessage = 'Juster is already validated';
+      }else if(error.message && error.message.includes('Scientist is already validated')){
+        errorMessage = 'Scientist is already validated';
 
       } else {
         errorMessage = `Unexpected error: ${error.message}`;
       }
       toast({
-        title: 'Validate Juster',
+        title: 'Validate Scientist',
         description: `Error: ${errorMessage}`,
         status: 'error',
         duration: 3000,
@@ -90,12 +90,12 @@ export default function ValidateJuster() {
     }
   };
 
-  const handleValidateJuster = async () => {
+  const handleValidateScientist = async () => {
     if (address) {
-      validateJuster(address);
+      validateScientist(address);
     } else {
       toast({
-        title: 'Validate Juster',
+        title: 'Validate Scientist',
         description: 'Please provide all arguments',
         status: 'info',
         duration: 2000,
@@ -119,7 +119,7 @@ export default function ValidateJuster() {
         border: "2px solid #fff",
        }}
       >
-        Validate Juster
+        Validate Scientist
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -132,7 +132,7 @@ export default function ValidateJuster() {
           >
             <Image
               src="https://copper-ready-guanaco-464.mypinata.cloud/ipfs/QmSonedE3a6r1zS9ukPYZPCTXqJX6gncwuRrXwFYhMAbU6?_gl=1*1hk0k8b*_ga*MTM1ODQ0MTgxMi4xNjk2NzkyMjEz*_ga_5RMPXG14TE*MTcwMjk2MjQwMC40My4xLjE3MDI5NjI4NTIuNjAuMC4w"
-              alt="Juster Image"
+              alt="Scientist Image"
               objectFit={"contain"}
               boxSize={"15rem"}
             ></Image>
@@ -144,7 +144,7 @@ export default function ValidateJuster() {
               textAlign="center"
               bgColor="black"
             >
-              Be a Juster!
+              Be a Scientist!
             </Heading>
           </Flex>
 
@@ -154,12 +154,12 @@ export default function ValidateJuster() {
             </Heading>
             <Text align="center" color="white">You need an Id to validate</Text>
 
-            <form onSubmit={handleValidateJuster}>
+            <form onSubmit={handleValidateScientist}>
               <Flex align={"center"} justify={"center"} direction={"column"}>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center" color="white">Juster Address</FormLabel>
+                  <FormLabel textAlign="center" color="white">Scientist Address</FormLabel>
                   <Input
-                    placeholder="Juster Address"
+                    placeholder="Scientist Address"
                     color="white"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
@@ -181,9 +181,9 @@ export default function ValidateJuster() {
                 border: "2px solid #fff",
                 
               }}
-              onClick={handleValidateJuster}
+              onClick={handleValidateScientist}
             >
-              Validate Juster
+              Validate Scientist
             </Button>
           </ModalFooter>
         </ModalContent>

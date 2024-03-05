@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { ethers } from "ethers";
 import { ZerkContract } from "../../requireEnviromentVariables";
-const contractABIzerk = require("../../utils/contractABIzerk.json");
+const contractABIzerk = require("../../utils/contractABIzaqua.json");
 
 export default function ValidateCase() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -147,7 +147,7 @@ export default function ValidateCase() {
               textAlign="center"
               bgColor="black"
             >
-              Are u a Lawyer?
+              Are u an Attestator?
             </Heading>
           </Flex>
 

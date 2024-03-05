@@ -24,7 +24,7 @@ const HeadDash = () => {
         <Flex direction="column" bgColor="transparent">
           <Image
             alignSelf="center"
-            src="favicon.svg"
+            src="zzWhite.png"
             bgColor="transparent"
             w="1.5rem"
             alt="Zaqua Logo"

@@ -22,12 +22,12 @@ import {
 } from "@chakra-ui/react";
 
 import { ethers } from "ethers";
-import { ZerkContract } from "../../requireEnviromentVariables";
-const contractABIzerk = require("../../utils/contractABIzerk.json");
+import { ZaquaContract } from "../../requireEnviromentVariables";
+const contractABIZaqua = require("../../utils/contractABIzaqua.json");
 
 export default function CreateValidator() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [licenseNumber, setLicenseNumber] = useState("");
+  const [Id, setId] = useState("");
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [especiality, setEspeciality] = useState("");
@@ -38,21 +38,20 @@ export default function CreateValidator() {
 
   // const provider = new ethers.providers.Web3Provider(window.ethereum);
 
-  const createValidator = async (licenseNumber, name, location, especiality) => {
+  const createAttestator = async (id, name, location) => {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       await window.ethereum.request({ method: "eth_requestAccounts" });
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
-        ZerkContract,
-        contractABIzerk,
+        ZaquaContract,
+        contractABIZaqua,
         signer
       );
-      const transaction = await contract.createValidator(
-        licenseNumber,
+      const transaction = await contract.createAttestator(
+        id,
         name,
-        location,
-        especiality
+        location
       );
       console.log("transaction", transaction);
       setLoading(true);
@@ -61,8 +60,8 @@ export default function CreateValidator() {
       //transaction success
       console.log(transactionHash);
       toast({
-        title: 'Create Validator',
-        description: 'Validator  created successfully',
+        title: 'Create Attestator',
+        description: 'Attestator  created successfully',
         status: 'success',
         duration: 2000,
         isClosable: true,
@@ -77,23 +76,23 @@ export default function CreateValidator() {
     errorMessage = 'User denied the transaction.';
   }
   
-   //error handling for zerk app chain starts
+   //error handling for Zaqua app chain starts
    else if (typeof error === 'object' && error.data && typeof error.data.message === 'string') {
         
-    if (error.data.message.includes(' revert Validator already exists')) {
-      errorMessage = 'Validator already exists';
+    if (error.data.message.includes(' revert Attestator already exists')) {
+      errorMessage = 'Attestator already exists';
     }
   
   }
-  //error handling for zerk app chain ends
-  else if (error.message && error.message.includes("Validator already exists")){
-    errorMessage =" Validator already exists"
+  //error handling for Zaqua app chain ends
+  else if (error.message && error.message.includes("Attestator already exists")){
+    errorMessage =" Attestator already exists"
   } else {
     errorMessage = `Unexpected error: ${error.message}`;
   }
 
   toast({
-    title: 'Create Validator',
+    title: 'Create Attestator',
     description: `Error: ${errorMessage}`,
     status: 'error',
     duration: 2000,
@@ -104,13 +103,13 @@ export default function CreateValidator() {
     }
   };
 
-  const handlecreateValidator = async () => {
-    if (licenseNumber && name && location && especiality) {
-      createValidator(licenseNumber, name, location, especiality);
+  const handlecreateAttestator = async () => {
+    if (Id && name && location && especiality) {
+      createAttestator(Id, name, location, especiality);
       
     } else {
       toast({
-        title: 'Create Validator',
+        title: 'Create Attestator',
         description: 'Please provide all arguments',
         status: 'info',
         duration: 2000,
@@ -130,7 +129,7 @@ export default function CreateValidator() {
   //
   // const incrementer = new ethers.Contract(
   //   contractAddress,
-  //   contractABIzerk,
+  //   contractABIZaqua,
   //   provider
   // );
 
@@ -163,7 +162,7 @@ export default function CreateValidator() {
           border: "2px solid #fff",
         }}
       >
-        Create Validator DID
+        Create Attestator DID
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -177,7 +176,7 @@ export default function CreateValidator() {
           >
             <Image
               src="https://copper-ready-guanaco-464.mypinata.cloud/ipfs/QmSonedE3a6r1zS9ukPYZPCTXqJX6gncwuRrXwFYhMAbU6?_gl=1*1hk0k8b*_ga*MTM1ODQ0MTgxMi4xNjk2NzkyMjEz*_ga_5RMPXG14TE*MTcwMjk2MjQwMC40My4xLjE3MDI5NjI4NTIuNjAuMC4w"
-              alt="Validator Image"
+              alt="Attestator Image"
               objectFit={"contain"}
               boxSize={"15rem"}
             ></Image>
@@ -189,7 +188,7 @@ export default function CreateValidator() {
               textAlign="center"
               bgColor="black"
             >
-              Be a Validator!
+              Be a Attestator!
             </Heading>
           </Flex>
 
@@ -198,17 +197,17 @@ export default function CreateValidator() {
               Wait for the validation of your Identity <br />& Start Earning
               Money
             </Heading>
-            <Text color="white" align="center"> You need a Professional License to be a Validator</Text>
+            <Text color="white" align="center"> You need a Professional License to be a Attestator</Text>
 
-            <form onSubmit={handlecreateValidator}>
+            <form onSubmit={handlecreateAttestator}>
               <Flex align={"center"} justify={"center"} direction={"column"}>
                 <FormControl p="1rem" pb="0" isRequired>
-                  <FormLabel textAlign="center" color="white">License Number</FormLabel>
+                  <FormLabel textAlign="center" color="white">ID</FormLabel>
                   <Input
-                    placeholder="License Number"
+                    placeholder="ID"
                     color="white"
-                    value={licenseNumber}
-                    onChange={(e) => setLicenseNumber(e.target.value)}
+                    value={Id}
+                    onChange={(e) => setId(e.target.value)}
                   />
                 </FormControl>
                 <FormControl p="1rem" pb="0" isRequired>
@@ -278,9 +277,9 @@ export default function CreateValidator() {
                         border: "2px solid #fff",
                         
                       }}
-                      onClick={handlecreateValidator}
+                      onClick={handlecreateAttestator}
                     >
-                      Create Validator
+                      Create Attestator
                     </Button>
                   </>
                 )}
