@@ -64,12 +64,21 @@ main {
   }
 
   .wrapper {
-    width: 600px;
+    /* width: 600px; */
     margin: 0 auto;
   }
 
   .landing-hero text{
     width: 100%;
-    
+  }
+
+  .Dhero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Dhero Image{
+    padding-top: 30px;
   }
 }

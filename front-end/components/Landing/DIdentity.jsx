@@ -10,7 +10,7 @@ export default function DIdentity() {
     router.push("/Dashboard");
   };
   return (
-    <Flex
+    <div
       direction={"column"}
       align={"center"}
       justify={"space-between"}
@@ -18,7 +18,7 @@ export default function DIdentity() {
       bgImage="section3.sv"
     >
       <Heading m="2rem">Are you a Scientist Attestator?</Heading>
-      <Flex>
+      <Flex className="Dhero">
         <Image
           src="cleaningWater.jpg"
           // rounded={"0%"}
@@ -52,6 +52,6 @@ export default function DIdentity() {
           </Button>
         </Flex>
       </Flex>
-    </Flex>
+    </div>
   );
 }
