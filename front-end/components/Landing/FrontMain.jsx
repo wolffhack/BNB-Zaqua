@@ -17,6 +17,7 @@ export default function Hero() {
   const router = useRouter();
   return (
     <Flex
+      className="wrapper"
       direction={"column"}
       align={"center"}
       justify={"center"}
@@ -24,11 +25,11 @@ export default function Hero() {
       bgImage="guy-lake-makes-fire.jpg"
       bgSize="cover"
       bgRepeat="no-repeat" 
-      className="bx"
+    
     > 
-    <Flex >
-      <Container maxW="100%">
-      <Stack
+    <div className="landing-hero">
+      <Container maxW="">
+      <Stack 
         as={Box}
         textAlign={"center"}
         spacing={{ base: 8, md: 10 }}
@@ -67,7 +68,7 @@ export default function Hero() {
       </Stack>
     </Container>
     <Flex direction="column" mr="1.5rem">
-        <Text fontSize={"1.5rem"} fontWeight={"500"} color="white"  mb="1rem" mt="5rem">Zaqua Network is a crowdfunding decentralized platform, that allows community to come together and clean the water</Text>
+        <Text fontSize={"1.5rem"} fontWeight={"500"} color="white"  mb="1rem" mt="rem">Zaqua Network is a crowdfunding decentralized platform, that allows community to come together and clean the water</Text>
 
         <Stack
           direction={"column"}
@@ -93,8 +94,7 @@ export default function Hero() {
           </Button>
         </Stack>
     </Flex>
-    </Flex>
-    
+    </div>
     </Flex>
   );
 }

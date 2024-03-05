@@ -7,7 +7,6 @@
   padding: 0%;
   margin: 0%;
   border: 0%;
-
   color: var(--yellow-green);
   font: "Raleway", sans-serif;
 }
@@ -21,7 +20,7 @@
   left: 0;
   right: 0;
 }
-Flex.bx::after {
+.bx::after {
   content: "";
   background: rgba(0, 0, 0, 0.6);
   position: absolute;
@@ -41,3 +40,36 @@ main {
   text-align: center;
 }
 
+.wrapper{
+  width: 100%;
+}
+
+.landing-hero {
+  align-items:center;
+  display:inline-block;
+  margin-top: 2rem;
+  margin-bottom: 20px;
+}
+
+.landing-hero button {
+  margin-bottom:10px ;
+}
+
+@media only screen and (min-width: 768px) {
+  .landing-hero {
+    align-items:center;
+    display:flex;
+    margin-top: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .wrapper {
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .landing-hero text{
+    width: 100%;
+    
+  }
+}
